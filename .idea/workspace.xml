@@ -2,13 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf11e313-7a40-45a9-83a0-094218b6f336" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/test/TestHttpServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/test/TestServerInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyserver/nettyserver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/nettyserver.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/test/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/test/TestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -20,20 +33,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\mavenPro" />
+        <option name="mavenHome" value="D:/softwarezip/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\softwarezip\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1VTdtO9AWVqs71X58sBW5lUWznR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showModules" value="false" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../idea" />
+    <property name="last_opened_file_path" value="D:/party-school/party-school" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\nettys\nettyserver\src\main\java\com\framework\test" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="TestServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -78,6 +109,12 @@
       <option name="presentableId" value="Default" />
       <updated>1577281232930</updated>
       <workItem from="1577281235222" duration="1249000" />
+      <workItem from="1577341520522" duration="1182000" />
+      <workItem from="1577342725149" duration="361000" />
+      <workItem from="1577343179891" duration="697000" />
+      <workItem from="1577343921846" duration="226000" />
+      <workItem from="1577344175497" duration="156000" />
+      <workItem from="1577344349286" duration="818000" />
     </task>
     <servers />
   </component>
@@ -85,13 +122,27 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="846" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1577281567227">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1368" y="179" key="#Project_Structure" timestamp="1577342018149">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1368" y="179" key="#Project_Structure/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577342018149" />
+    <state x="-1074" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1577344873279">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1074" y="242" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577344873279" />
     <state x="846" y="242" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577281567227" />
-    <state x="911" y="435" key="com.intellij.ide.util.TipDialog" timestamp="1577281239032">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1519" y="285" key="FileChooserDialogImpl" timestamp="1577345167980">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1519" y="285" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577345167980" />
+    <state x="-1459" y="162" key="SettingsEditor" timestamp="1577344862731">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1459" y="162" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577344862731" />
+    <state x="-1385" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1577344349512">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1385" y="300" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577344349512" />
     <state x="911" y="435" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577281239032" />
     <state x="605" y="306" key="new project wizard" timestamp="1577281292599">
       <screen x="0" y="0" width="1920" height="1040" />
