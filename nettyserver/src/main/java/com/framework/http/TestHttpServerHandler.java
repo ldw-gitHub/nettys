@@ -1,4 +1,4 @@
-package com.framework.test;
+package com.framework.http;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -20,6 +20,9 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
      */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
+        System.out.println(msg.getClass());
+        System.out.println(ctx.channel().remoteAddress());
+
         if (msg instanceof HttpRequest) {
             HttpRequest httpRequest = (HttpRequest) msg;
             System.out.println("请求方法名：" + httpRequest.method().name());
@@ -35,7 +38,9 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
 
             response.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/plain");
             response.headers().set(HttpHeaderNames.CONTENT_LENGTH, content.readableBytes());
+
             ctx.writeAndFlush(response);
+            ctx.channel().close();
         }
     }
 
@@ -65,6 +70,7 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
 
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
+        //取消注册
         System.out.println("channelUnregistered");
         super.channelUnregistered(ctx);
     }

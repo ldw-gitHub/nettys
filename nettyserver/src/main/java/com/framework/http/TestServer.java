@@ -1,4 +1,4 @@
-package com.framework.test;
+package com.framework.http;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -7,6 +7,10 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class TestServer {
+
+    //1、http开发
+    //2、socket开发/自定义协议
+    //3、长连接开发
 
         public static void main(String[] args) throws Exception {
             //事件循环组
