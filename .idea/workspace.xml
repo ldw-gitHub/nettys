@@ -1,35 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf11e313-7a40-45a9-83a0-094218b6f336" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatClientInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyClientInitialiter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServerInitialiter.java" afterDir="false" />
+    <list default="true" id="b386142c-2f8b-4182-aaf6-df03552acc74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/NioTest3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/Component.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/ConcreateComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/ConcreateDecorator1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/ConcreateDecorator2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/Decorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/heartbeat/MyServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/heartbeat/MyServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/heartbeat/MyServerInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/nio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/protobuf/DateInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/protobuf/ProtoBufTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/DateInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/MyDataInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestClientInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestServerInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/rpc.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/websocket/MyServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/websocket/TextWebSocketFrameHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/websocket/WebSocketChannelInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/protobuf/Person.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/protobuf/Student.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/webapp/WebSocketTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/test/TestHttpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/http/TestHttpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/test/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/http/TestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/test/TestServerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/http/TestServerInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -37,46 +58,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="localRepository" value="D:\mavenPro" />
-        <option name="mavenHome" value="D:/softwarezip/apache-maven-3.5.2" />
-        <option name="userSettingsFile" value="D:\softwarezip\apache-maven-3.5.2\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1VTdtO9AWVqs71X58sBW5lUWznR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="1VxPJA4MyRScSLIIBxmMZGVYcCv" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showModules" value="false" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/party-school/party-school" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\nettys\nettyserver\src\main\java\com\framework\test" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.MyChatClient">
-    <configuration name="MyChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.moreClientSocket.MyChatClient" />
+  <component name="RunManager" selected="Application.NioTest6">
+    <configuration name="NioTest1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest1" />
       <module name="nettyserver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.framework.moreClientSocket.*" />
+          <option name="PATTERN" value="com.framework.nio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,12 +88,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.moreClientSocket.MyChatServer" />
+    <configuration name="NioTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest2" />
       <module name="nettyserver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.framework.moreClientSocket.*" />
+          <option name="PATTERN" value="com.framework.nio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,12 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.socket.MyClient" />
+    <configuration name="NioTest3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest3" />
       <module name="nettyserver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.framework.socket.*" />
+          <option name="PATTERN" value="com.framework.nio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,12 +114,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.socket.MyServer" />
+    <configuration name="NioTest5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest5" />
       <module name="nettyserver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.framework.socket.*" />
+          <option name="PATTERN" value="com.framework.nio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,12 +127,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.http.TestServer" />
+    <configuration name="NioTest6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest6" />
       <module name="nettyserver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.framework.http.*" />
+          <option name="PATTERN" value="com.framework.nio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,20 +140,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.MyChatClient" />
-      <item itemvalue="Application.MyChatServer" />
-      <item itemvalue="Application.MyClient" />
-      <item itemvalue="Application.MyServer" />
-      <item itemvalue="Application.TestServer" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MyChatClient" />
-        <item itemvalue="Application.MyChatServer" />
-        <item itemvalue="Application.MyClient" />
-        <item itemvalue="Application.MyServer" />
-        <item itemvalue="Application.TestServer" />
+        <item itemvalue="Application.NioTest6" />
+        <item itemvalue="Application.NioTest5" />
+        <item itemvalue="Application.NioTest2" />
+        <item itemvalue="Application.NioTest3" />
+        <item itemvalue="Application.NioTest1" />
       </list>
     </recent_temporary>
   </component>
@@ -170,76 +167,55 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bf11e313-7a40-45a9-83a0-094218b6f336" name="Default Changelist" comment="" />
-      <created>1577281232930</created>
+      <changelist id="b386142c-2f8b-4182-aaf6-df03552acc74" name="Default Changelist" comment="" />
+      <created>1578191699564</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1577281232930</updated>
-      <workItem from="1577281235222" duration="1249000" />
-      <workItem from="1577341520522" duration="1182000" />
-      <workItem from="1577342725149" duration="361000" />
-      <workItem from="1577343179891" duration="697000" />
-      <workItem from="1577343921846" duration="226000" />
-      <workItem from="1577344175497" duration="156000" />
-      <workItem from="1577344349286" duration="818000" />
-      <workItem from="1577357417010" duration="726000" />
-      <workItem from="1577427216594" duration="10726000" />
+      <updated>1578191699564</updated>
+      <workItem from="1578191704902" duration="45000" />
+      <workItem from="1578273270339" duration="56000" />
+      <workItem from="1578273407258" duration="123000" />
+      <workItem from="1578276046519" duration="13176000" />
+      <workItem from="1578298186572" duration="3836000" />
+      <workItem from="1578307002460" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="-1368" y="179" key="#Project_Structure" timestamp="1577342018149">
+    <state x="-1206" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578276595061">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1368" y="179" key="#Project_Structure/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577342018149" />
-    <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577436717889">
+    <state x="-1206" y="323" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578276595061" />
+    <state x="-1155" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1578278793271">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577436717889" />
-    <state x="-1074" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1577436340520">
+    <state x="-1155" y="230" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578278793271" />
+    <state width="1554" height="215" key="GridCell.Tab.0.bottom" timestamp="1578302470107">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1074" y="242" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577436340520" />
-    <state x="846" y="242" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577281567227" />
-    <state x="-1519" y="285" key="FileChooserDialogImpl" timestamp="1577408722084">
+    <state width="1554" height="215" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578302470107" />
+    <state width="1554" height="215" key="GridCell.Tab.0.center" timestamp="1578302470107">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1519" y="285" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577408722084" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1577437452188">
+    <state width="1554" height="215" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578302470107" />
+    <state width="1554" height="215" key="GridCell.Tab.0.left" timestamp="1578302470107">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577437452188" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1577437452188">
+    <state width="1554" height="215" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578302470107" />
+    <state width="1554" height="215" key="GridCell.Tab.0.right" timestamp="1578302470107">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577437452188" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1577437452188">
+    <state width="1554" height="215" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578302470107" />
+    <state x="-1920" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578273413976">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577437452188" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1577437452188">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577437452188" />
-    <state x="-1459" y="162" key="SettingsEditor" timestamp="1577436678319">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1459" y="162" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577436678319" />
-    <state x="-1385" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1577344349512">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1385" y="300" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577344349512" />
-    <state x="911" y="435" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577281239032" />
-    <state x="605" y="306" key="new project wizard" timestamp="1577281292599">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="605" y="306" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1577281292599" />
-    <state x="-1304" y="240" key="run.anything.popup" timestamp="1577436591221">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1304" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1577436591221" />
+    <state x="-1920" y="344" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578273413976" />
+    <state x="0" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578191713428" />
   </component>
 </project>

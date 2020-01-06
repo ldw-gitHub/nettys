@@ -1,0 +1,73 @@
+java i/o 系统
+
+p -37
+
+流类
+    流完成输入和输出
+    从流结构上分为字节流和字符流
+
+    open a stream
+    while more information
+    read information
+    close the stream
+
+    节点流 --- FileInputStream 从特定地方读取文件
+    过滤流 --- BufferedInputStream、DataInputStream  在已有流的基础上进行包装
+
+    DataOutputStream --- BufferedOutputStream --- FileOutputStream
+
+    Decorator(装饰)设计模式
+
+
+java.io
+java.nio
+
+    java.io中核心就是流Stream，面向流的编程。java中一个流要么是输入流要么是输出流
+    java.nio中有3个核心概念：Selector、Channel与Buffer，面向块block或是缓冲区buffer编程。Buffer本身就是一块内存，底层实现上是一个数组，数据的读写都是buffer来实现的。
+
+    除了数组之外，Buffer还提供了数据的结构化访问方式，并且可以追踪到系统的读写过程
+    java中的7种原生的数据类型都有各自的Buffer类型，eg：IntBuffer\LongBuffer等没有booleanBuffer
+    Channel指的是可以向其写入数据或从中读取数据对象，它类似于java.io中的Stream
+    所有的数据读写都是通过Buffer来实行的
+    与Stream不同的是，Channel是双向的
+    由于Channel是双向的，它能更好的反应中底层操作系统的真实情况，在linux中，底层操作系统的通道就是双向的
+
+
+    关于buffer中三个重要状态属性的含义：position，limit与capacity
+    capacity和limit指向容量最后一位，position指向下一个将要被写和被读的位置
+        --当调用flip，position指向第一个位置，limit执行之前position的位置，capacity不变
+
+    0 <= mark <= position <= limit <= capacity
+
+    绝对方法与相对方法的含义
+    1、相对方法：limit值与position值会在操作时被考虑到
+    2、绝对方法：完全忽略掉limit与position值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-package com.framework.socket;
+package com.framework.websocket;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -16,7 +16,8 @@ public class MyServer {
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(boosGroup, workerGroup).channel(NioServerSocketChannel.class)
-                    .handler(new LoggingHandler(LogLevel.INFO)).childHandler(new MyServerInitialiter());
+                    .handler(new LoggingHandler(LogLevel.INFO))
+                    .childHandler(new WebSocketChannelInitializer());
 
             ChannelFuture channelFuture = serverBootstrap.bind(8899).sync();
             channelFuture.channel().closeFuture().sync();

@@ -1,0 +1,14 @@
+1、定义一个接口说明文件：描述了对象（结构体），对象成员、接口方法等一系列信息
+2、通过RPC框架提供的编译器，将接口说明文件编译成具体的语言文件
+3、在客户端和服务端分别引入RPC编译器所生成的文件，即可像调用本地方法一样调用远程方法
+
+google protocol buffers
+
+p-16
+
+https://developers.google.com/protocol-buffers/docs/javatutorial
+
+1、创建proto文件后，执行文件，需提前安装protocol编译器
+protoc --java_out=nettyserver/src/main/java nettyserver/src/protobuf/Student.proto
+
+protoc --java_out=nettyserver/src/main/java nettyserver/src/protobuf/Person.proto
