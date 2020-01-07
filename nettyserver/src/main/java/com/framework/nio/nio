@@ -1,6 +1,6 @@
 java i/o 系统
 
-p -37
+p -42
 
 流类
     流完成输入和输出
@@ -42,6 +42,10 @@ java.nio
     绝对方法与相对方法的含义
     1、相对方法：limit值与position值会在操作时被考虑到
     2、绝对方法：完全忽略掉limit与position值
+
+    DirectByteBuffer
+    nio堆外内存与零拷贝：在本地内存中存储数据，通过address指向内存区域（native），操作系统可以i/o直接操作
+    io --> jvm 堆内存 --> native 内存拷贝 --> io操作 ，多了一次拷贝，因为操作系统不能直接操作jvm堆内存（可以操作，但是jvm GC后，造成内存地址变化）
 
 
 
