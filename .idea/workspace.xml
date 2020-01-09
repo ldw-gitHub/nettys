@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b386142c-2f8b-4182-aaf6-df03552acc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NioTest9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NioTest9_out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest10Charset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/zerocopy/NewIOClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/zerocopy/NewIOServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/zerocopy/OldServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest9Selector.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest9Selector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/nio" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/nio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +44,37 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
-  <component name="RunManager" selected="Application.NioTest7">
-    <configuration name="NioTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest2" />
+  <component name="RunManager" selected="Application.NewIOClient">
+    <configuration name="NewIOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.zerocopy.NewIOClient" />
+      <module name="nettyserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.framework.zerocopy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewIOServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.zerocopy.NewIOServer" />
+      <module name="nettyserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.framework.zerocopy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NioClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioClient" />
       <module name="nettyserver" />
       <extension name="coverage">
         <pattern>
@@ -53,8 +86,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NioTest3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest3" />
+    <configuration name="NioServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioServer" />
       <module name="nettyserver" />
       <extension name="coverage">
         <pattern>
@@ -66,8 +99,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NioTest5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest5" />
+    <configuration name="NioTest10Charset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest10Charset" />
       <module name="nettyserver" />
       <extension name="coverage">
         <pattern>
@@ -79,39 +112,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NioTest6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest6" />
-      <module name="nettyserver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.framework.nio.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NioTest7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.framework.nio.NioTest7" />
-      <module name="nettyserver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.framework.nio.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.NioClient" />
+      <item itemvalue="Application.NioServer" />
+      <item itemvalue="Application.NioTest10Charset" />
+      <item itemvalue="Application.NewIOServer" />
+      <item itemvalue="Application.NewIOClient" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NioTest7" />
-        <item itemvalue="Application.NioTest6" />
-        <item itemvalue="Application.NioTest5" />
-        <item itemvalue="Application.NioTest2" />
-        <item itemvalue="Application.NioTest3" />
+        <item itemvalue="Application.NewIOClient" />
+        <item itemvalue="Application.NewIOServer" />
+        <item itemvalue="Application.NioTest10Charset" />
+        <item itemvalue="Application.NioClient" />
+        <item itemvalue="Application.NioServer" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +163,10 @@
       <workItem from="1578445400784" duration="7018000" />
       <workItem from="1578466582263" duration="12000" />
       <workItem from="1578466614946" duration="31000" />
-      <workItem from="1578479535610" duration="4000" />
+      <workItem from="1578479535610" duration="343000" />
+      <workItem from="1578532229795" duration="9701000" />
+      <workItem from="1578553676836" duration="5196000" />
+      <workItem from="1578562536114" duration="3012000" />
     </task>
     <servers />
   </component>
@@ -160,34 +177,54 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1368" y="179" key="#Notifications" timestamp="1578535747605">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="179" key="#Notifications/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578535747605" />
+    <state x="-1301" y="366" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1578540360824">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1301" y="366" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578540360824" />
+    <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578534476103">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578534476103" />
     <state x="-1206" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578379965609">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1206" y="323" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578379965609" />
-    <state x="-1155" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1578278793271">
+    <state x="-1155" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1578534803083">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1155" y="230" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578278793271" />
-    <state width="1552" height="215" key="GridCell.Tab.0.bottom" timestamp="1578393373673">
+    <state x="-1155" y="230" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578534803083" />
+    <state width="1289" height="195" key="GridCell.Tab.0.bottom" timestamp="1578563211557">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1552" height="215" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578393373673" />
-    <state width="1552" height="215" key="GridCell.Tab.0.center" timestamp="1578393373673">
+    <state width="1289" height="195" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578563211557" />
+    <state width="1289" height="195" key="GridCell.Tab.0.center" timestamp="1578563211557">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1552" height="215" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578393373673" />
-    <state width="1552" height="215" key="GridCell.Tab.0.left" timestamp="1578393373673">
+    <state width="1289" height="195" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578563211557" />
+    <state width="1289" height="195" key="GridCell.Tab.0.left" timestamp="1578563211557">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1552" height="215" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578393373673" />
-    <state width="1552" height="215" key="GridCell.Tab.0.right" timestamp="1578393373673">
+    <state width="1289" height="195" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578563211557" />
+    <state width="1289" height="195" key="GridCell.Tab.0.right" timestamp="1578563211557">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1552" height="215" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578393373673" />
-    <state x="-1920" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578445611860">
+    <state width="1289" height="195" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578563211557" />
+    <state x="-1679" y="155" width="1323" height="715" key="SettingsEditor" timestamp="1578540363141">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1920" y="344" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578445611860" />
+    <state x="-1679" y="155" width="1323" height="715" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578540363141" />
+    <state x="-1920" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578532231619">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1920" y="344" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578532231619" />
     <state x="0" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578191713428" />
+    <state x="-1297" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1578532634098">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1297" y="229" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578532634098" />
   </component>
 </project>

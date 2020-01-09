@@ -11,6 +11,7 @@ import io.netty.handler.logging.LoggingHandler;
 public class MyServer {
 
     public static void main(String[] args) {
+        //异步的事件循环组
         EventLoopGroup boosGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {

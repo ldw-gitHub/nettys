@@ -1,6 +1,6 @@
 java i/o 系统
 
-p -44
+p -52
 
 流类
     流完成输入和输出
@@ -46,6 +46,39 @@ java.nio
     DirectByteBuffer
     nio堆外内存与零拷贝：在本地内存中存储数据，通过address指向内存区域（native），操作系统可以i/o直接操作
     io --> jvm 堆内存 --> native 内存拷贝 --> io操作 ，多了一次拷贝，因为操作系统不能直接操作jvm堆内存（可以操作，但是jvm GC后，造成内存地址变化）
+
+
+------------------------------------------------------------------------------
+    user space               kemel space               hardware
+        |     read() syscall    |
+        | ------------------->  |      ask for data  --->
+                                       <-----data to kemel buffer through DMA
+        | <----copy data to user buffer
+
+        |
+        |
+        |write()syscall copies data to kemel socket buffer -->
+        |                              | writes data --->
+        |                              | <--- done
+        | <--- write() returns
+     user space             kemel space                hardware
+-----------------------------------------------------------------------------
+                    操作系统意义上的零拷贝
+-----------------------------------------------------------------------------
+    user space （用户）           kemel space (内核)              hardware（硬件）
+        |     sendfile() syscall    |
+        | ------------------->      |      ask for data  --->
+                                    | <-----data to kemel buffer through DMA
+        |                           | <----copy data to user buffer
+
+        |                           | <--write data to target socket buffer-->
+        |
+        |
+        |                           | writes data --->
+        |                           | <--- done
+        | <--- write() returns
+     user space             kemel space                hardware
+-----------------------------------------------------------------------------
 
 
 
