@@ -22,7 +22,7 @@ import static io.netty.buffer.Unpooled.copiedBuffer;
 @NettyController
 public class UserController {
 
-    @ActionMap(key = "/login")
+    @ActionMap(key = "/login",requestMethod = "Post")
     public void login(ChannelHandlerContext ctx, Map<String, Object> params){
         ByteBuf content = copiedBuffer(params.toString(), CharsetUtil.UTF_8);
         FullHttpResponse response = ResponseUtils.responseOK(HttpResponseStatus.OK, content);

@@ -32,7 +32,8 @@ public class ActionBeanPostProcessor implements BeanPostProcessor {
                 Action action = new Action();
                 action.setMethod(method);
                 action.setObject(bean);
-                log.info("url --- " + actionMap.key());
+                action.setRequestMethod(actionMap.requestMethod());
+                log.info("url --- " + actionMap.key() + " , method --- " + actionMap.requestMethod());
                 ActionMapUtil.put(actionMap.key(), action);
             }
         }

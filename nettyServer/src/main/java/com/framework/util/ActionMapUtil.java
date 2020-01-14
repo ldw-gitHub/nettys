@@ -15,9 +15,9 @@ public class ActionMapUtil {
 
     private static Map<String, Action> map = new HashMap<String, Action>();
 
-    public static Object invote(String key, Object... args) throws Exception {
+    public static Object invote(String key,String requestMethod, Object... args) throws Exception {
         Action action = map.get(key);
-        if (action != null) {
+        if (action != null && action.getRequestMethod().equalsIgnoreCase(requestMethod)) {
             Method method = action.getMethod();
             try {
                 return method.invoke(action.getObject(), args);

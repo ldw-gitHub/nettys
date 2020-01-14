@@ -2,13 +2,18 @@ package com.framework.handler;
 
 import com.framework.util.ActionMapUtil;
 import com.framework.util.ResponseUtils;
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.*;
+import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static io.netty.buffer.Unpooled.copiedBuffer;
 
 /**
  * @description
@@ -30,8 +35,11 @@ public class NettyHttpServerHandler extends SimpleChannelInboundHandler<FullHttp
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         log.info("=====================================  channelRead  ==============================================");
         FullHttpRequest fullHttpRequest = (FullHttpRequest) msg;
+        log.info("request url --- " + fullHttpRequest.uri());
+        log.info("request method --- " + fullHttpRequest.method());
 
         FullHttpResponse response = null;
+        String content = "";
         Map<String, Object> params = new HashMap<>();
         if (fullHttpRequest.method() == HttpMethod.GET) {
             params = ResponseUtils.getGetParamsFromChannel(fullHttpRequest);
@@ -40,10 +48,16 @@ public class NettyHttpServerHandler extends SimpleChannelInboundHandler<FullHttp
             params = ResponseUtils.getPostParamsFromChannel(fullHttpRequest);
             log.info("params --- " + params.toString());
         } else {
-            response = ResponseUtils.responseOK(HttpResponseStatus.INTERNAL_SERVER_ERROR, null);
+            content = "请求类型不支持！";
+            response = ResponseUtils.responseOK(HttpResponseStatus.INTERNAL_SERVER_ERROR, copiedBuffer(content, CharsetUtil.UTF_8));
         }
 
-        ActionMapUtil.invote(fullHttpRequest.uri(), ctx, params);
+        if (ActionMapUtil.invote(fullHttpRequest.uri(), fullHttpRequest.method() + "", ctx, params) == null){
+            content = "请求路径不存在！";
+            response = ResponseUtils.responseOK(HttpResponseStatus.INTERNAL_SERVER_ERROR, copiedBuffer(content, CharsetUtil.UTF_8));
+        }
+
+        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
 
     }
 

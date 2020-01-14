@@ -11,5 +11,8 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD)
 @Documented
 public @interface ActionMap {
+
     String key();
+
+    String requestMethod();
 }

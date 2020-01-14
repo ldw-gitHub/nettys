@@ -3,7 +3,7 @@ package com.framework.model;
 import java.lang.reflect.Method;
 
 /**
- * @description  路径映射
+ * @description 路径映射
  * @author: liudawei
  * @date: 2020/1/13 15:37
  */
@@ -12,6 +12,16 @@ public class Action {
     private Method method;
 
     private Object object;
+
+    private String requestMethod;
+
+    public String getRequestMethod() {
+        return requestMethod;
+    }
+
+    public void setRequestMethod(String requestMethod) {
+        this.requestMethod = requestMethod;
+    }
 
     public Method getMethod() {
         return method;
