@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b386142c-2f8b-4182-aaf6-df03552acc74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/reactor/reactor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/reactor/reactor.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/handler/NettyHttpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/handler/NettyHttpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/init/NettyServerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/init/NettyServerInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/server/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/server/NettyServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +198,7 @@
       <workItem from="1578963649691" duration="1667000" />
       <workItem from="1578965379685" duration="1284000" />
       <workItem from="1578966685167" duration="5693000" />
-      <workItem from="1578986056367" duration="8513000" />
+      <workItem from="1578986056367" duration="8685000" />
     </task>
     <servers />
   </component>
