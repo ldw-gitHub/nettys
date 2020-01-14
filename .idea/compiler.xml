@@ -9,6 +9,7 @@
         <module name="common" />
         <module name="netty" />
         <module name="nettyMaterials" />
+        <module name="test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

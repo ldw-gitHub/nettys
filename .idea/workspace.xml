@@ -2,97 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b386142c-2f8b-4182-aaf6-df03552acc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nettyServer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/AppServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/auth/ActionMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/auth/NettyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/handler/NettyHttpServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/init/ActionBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/init/NettyServerInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/model/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/server/NettyServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/util/ActionMapUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/java/com/framework/util/ResponseUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/resources/application-test.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyServer/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/nettyserver.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/decorator/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/decorator/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/ConcreateComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/decorator/ConcreateComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/ConcreateDecorator1.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/decorator/ConcreateDecorator1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/ConcreateDecorator2.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/decorator/ConcreateDecorator2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/decorator/Decorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/decorator/Decorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/heartbeat/MyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/heartbeat/MyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/heartbeat/MyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/heartbeat/MyServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/heartbeat/MyServerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/heartbeat/MyServerInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/http/TestHttpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/http/TestHttpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/http/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/http/TestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/http/TestServerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/http/TestServerInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/moreClientSocket/MyChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/moreClientSocket/MyChatClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatClientInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/moreClientSocket/MyChatClientInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/moreClientSocket/MyChatInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/moreClientSocket/MyChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/moreClientSocket/MyChatServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/moreClientSocket/MyChatServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest10Charset.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest10Charset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest3.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest4.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest5.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest6.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest7.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest8.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/NioTest9Selector.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/NioTest9Selector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/nio/nio" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/nio/nio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/protobuf/DateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/protobuf/DateInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/protobuf/ProtoBufTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/protobuf/ProtoBufTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/reactor/reactor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/reactor/reactor.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/DateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/protobuf/DateInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/MyDataInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/protobuf/MyDataInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/protobuf/TestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/protobuf/TestClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestClientInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/protobuf/TestClientInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/protobuf/TestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/protobuf/TestServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/protobuf/TestServerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/protobuf/TestServerInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/rpc/rpc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/rpc/rpc.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/socket/MyClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/socket/MyClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyClientInitialiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/socket/MyClientInitialiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/socket/MyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/socket/MyServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/socket/MyServerInitialiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/socket/MyServerInitialiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/websocket/MyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/websocket/MyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/websocket/TextWebSocketFrameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/websocket/TextWebSocketFrameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/websocket/WebSocketChannelInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/websocket/WebSocketChannelInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/zerocopy/NewIOClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/zerocopy/NewIOClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/zerocopy/NewIOServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/zerocopy/NewIOServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/main/java/com/framework/zerocopy/OldServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/main/java/com/framework/zerocopy/OldServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/protobuf/Person.proto" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/protobuf/Person.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/protobuf/Student.proto" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/protobuf/Student.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyserver/src/webapp/WebSocketTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/src/webapp/WebSocketTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/AppServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/auth/ActionMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/auth/NettyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/handler/NettyHttpServerHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/init/ActionBeanPostProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/init/NettyServerInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/model/Action.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/server/NettyServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/util/ActionMapUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/java/com/framework/util/ResponseUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyMaterials/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyMaterials/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyServer/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,6 +211,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1267" y="177" key="#AppServer" timestamp="1578973697341">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1267" y="177" key="#AppServer/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1578973697341" />
     <state x="-1368" y="179" key="#Notifications" timestamp="1578880156191">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

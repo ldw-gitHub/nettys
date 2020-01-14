@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>test</artifactId>
+    <artifactId>nettyServer</artifactId>
 
     <properties>
         <springboot.version>1.5.4.RELEASE</springboot.version>
