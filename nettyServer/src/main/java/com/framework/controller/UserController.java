@@ -28,4 +28,11 @@ public class UserController {
         FullHttpResponse response = ResponseUtils.responseOK(HttpResponseStatus.OK, content);
         ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
     }
+
+    @ActionMap(key = "/loginout",requestMethod = "get")
+    public void loginout(ChannelHandlerContext ctx, Map<String, Object> params){
+        ByteBuf content = copiedBuffer(params.toString(), CharsetUtil.UTF_8);
+        FullHttpResponse response = ResponseUtils.responseOK(HttpResponseStatus.OK, content);
+        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+    }
 }

@@ -15,10 +15,11 @@ import io.netty.handler.codec.http.HttpServerCodec;
 public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
-        ChannelPipeline pipeline = ch.pipeline();
+        ChannelPipeline pipeline = ch.pipeline();//管道，添加拦截器
         pipeline.addLast("httpServerCodec",new HttpServerCodec()); //完成http的编码与解码
         //将HTTP消息的多个部分合成一条完整的HTTP消息
         pipeline.addLast("http-aggregator",new HttpObjectAggregator(65535));
+        //自定义拦截器
         pipeline.addLast("HttpServerHandler",new NettyHttpServerHandler());
     }
 }

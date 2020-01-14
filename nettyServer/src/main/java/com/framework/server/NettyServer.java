@@ -22,8 +22,8 @@ public class NettyServer {
 
     public void run() throws Exception {
         //事件循环组
-        EventLoopGroup bossGroup = new NioEventLoopGroup(); //获取连接
-        EventLoopGroup workerGroup = new NioEventLoopGroup();//处理连接
+        EventLoopGroup bossGroup = new NioEventLoopGroup(); //获取连接 accept
+        EventLoopGroup workerGroup = new NioEventLoopGroup();//处理连接 read and send
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).

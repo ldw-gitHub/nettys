@@ -8,12 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="netty" />
+        <module name="nettyServer" />
         <module name="nettyMaterials" />
-        <module name="test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="nettyServer" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

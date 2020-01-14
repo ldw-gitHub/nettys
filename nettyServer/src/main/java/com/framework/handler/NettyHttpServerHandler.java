@@ -34,6 +34,7 @@ public class NettyHttpServerHandler extends SimpleChannelInboundHandler<FullHttp
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         log.info("=====================================  channelRead  ==============================================");
+        log.info("采用业务线程池来处理业务逻辑，否则netty workerGroup会阻塞在此，影响服务器效率");
         FullHttpRequest fullHttpRequest = (FullHttpRequest) msg;
         log.info("request url --- " + fullHttpRequest.uri());
         log.info("request method --- " + fullHttpRequest.method());
@@ -54,7 +55,7 @@ public class NettyHttpServerHandler extends SimpleChannelInboundHandler<FullHttp
 
         if (ActionMapUtil.invote(fullHttpRequest.uri(), fullHttpRequest.method() + "", ctx, params) == null){
             content = "请求路径不存在！";
-            response = ResponseUtils.responseOK(HttpResponseStatus.INTERNAL_SERVER_ERROR, copiedBuffer(content, CharsetUtil.UTF_8));
+            response = ResponseUtils.responseOK(HttpResponseStatus.BAD_GATEWAY, copiedBuffer(content, CharsetUtil.UTF_8));
         }
 
         ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
