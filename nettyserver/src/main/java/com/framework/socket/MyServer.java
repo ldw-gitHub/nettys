@@ -12,13 +12,16 @@ public class MyServer {
 
     public static void main(String[] args) {
         //异步的事件循环组
-        EventLoopGroup boosGroup = new NioEventLoopGroup();
+        //线程数为cpu核心*2
+        EventLoopGroup boosGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
-            ServerBootstrap serverBootstrap = new ServerBootstrap();
+            ServerBootstrap serverBootstrap = new ServerBootstrap();//参数设定辅助类
+            //handler是服务于boosGroup，childHandler是服务于workerGroup
             serverBootstrap.group(boosGroup, workerGroup).channel(NioServerSocketChannel.class)
                     .handler(new LoggingHandler(LogLevel.INFO)).childHandler(new MyServerInitialiter());
 
+            //ChannelFuture观察者模式执行operationComplete
             ChannelFuture channelFuture = serverBootstrap.bind(8899).sync();
             channelFuture.channel().closeFuture().sync();
 

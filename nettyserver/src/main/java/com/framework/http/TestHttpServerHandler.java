@@ -20,13 +20,16 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
      */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
-        System.out.println(msg.getClass());
-        System.out.println(ctx.channel().remoteAddress());
+//        System.out.println(msg.getClass());
+        System.out.println("address : " + ctx.channel().remoteAddress());
 
         if (msg instanceof HttpRequest) {
             HttpRequest httpRequest = (HttpRequest) msg;
-            System.out.println("请求方法名：" + httpRequest.method().name());
+            String auth = httpRequest.headers().get("Authorization");
+            System.out.println("auth : " + auth);
+            System.out.println("method : " + httpRequest.method().name());
             URI uri = new URI(httpRequest.getUri());
+            System.out.println("url : " + uri.getPath());
             if ("/favicon.ico".equals(uri.getPath())) {
                 //网站图标，浏览器会默认请求
                 System.out.println("请求favicon.ico");
@@ -45,33 +48,34 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
     }
 
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("channel active");
-        super.channelActive(ctx);
+    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("=============================== handlerAdded =====================================");
+        super.handlerAdded(ctx);
     }
-
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("channelRegistered");
+        System.out.println("=============================== channelRegistered =====================================");
         super.channelRegistered(ctx);
     }
 
     @Override
-    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("handlerAdded");
-        super.handlerAdded(ctx);
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("=============================== channel active =====================================");
+        super.channelActive(ctx);
     }
+
+
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("channelInactive");
+        System.out.println("=============================== channelInactive =====================================");
         super.channelInactive(ctx);
     }
 
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
         //取消注册
-        System.out.println("channelUnregistered");
+        System.out.println("=============================== channelUnregistered =====================================");
         super.channelUnregistered(ctx);
     }
 }

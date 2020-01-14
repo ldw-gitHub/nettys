@@ -1,0 +1,16 @@
+Reactor模式
+
+反应器模式
+
+proactor模式
+
+netty整体架构是reactor模式的完整体现
+
+Responsive Design
+
+文档Scalable IO in Java Doug Lea
+
+Reactor Pattern
+
+
+
