@@ -2,6 +2,8 @@ package com.framework.controller;
 
 import com.framework.auth.ActionMap;
 import com.framework.auth.NettyController;
+import com.framework.model.BusinessException;
+import com.framework.model.ResultInfo;
 import com.framework.util.ResponseUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFutureListener;
@@ -22,17 +24,16 @@ import static io.netty.buffer.Unpooled.copiedBuffer;
 @NettyController
 public class UserController {
 
-    @ActionMap(key = "/login",requestMethod = "Post")
-    public void login(ChannelHandlerContext ctx, Map<String, Object> params){
-        ByteBuf content = copiedBuffer(params.toString(), CharsetUtil.UTF_8);
-        FullHttpResponse response = ResponseUtils.responseOK(HttpResponseStatus.OK, content);
-        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+    @ActionMap(key = "/login", requestMethod = "Post")
+    public void login(ChannelHandlerContext ctx, Map<String, Object> params) {
+
+        throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE);
+//        ResultInfo resultInfo = new ResultInfo(ResultInfo.SUCCESS,ResultInfo.MSG_SUCCESS,params);
+//        ResponseUtils.responseOK(ctx,resultInfo);
     }
 
-    @ActionMap(key = "/loginout",requestMethod = "get")
-    public void loginout(ChannelHandlerContext ctx, Map<String, Object> params){
-        ByteBuf content = copiedBuffer(params.toString(), CharsetUtil.UTF_8);
-        FullHttpResponse response = ResponseUtils.responseOK(HttpResponseStatus.OK, content);
-        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+    @ActionMap(key = "/loginout", requestMethod = "get")
+    public void loginout(ChannelHandlerContext ctx, Map<String, Object> params) {
+        ResponseUtils.responseOK(ctx, new ResultInfo(ResultInfo.SUCCESS, ResultInfo.MSG_SUCCESS, params));
     }
 }
