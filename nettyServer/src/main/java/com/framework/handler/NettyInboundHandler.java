@@ -35,7 +35,7 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<FullHttpReq
 //    private static ExecutorService FIXED_THREAD_POOL = Executors.newFixedThreadPool(THREAD_NUMBER);
 
     /**
-     * @description: 请求分发
+     * @description: 参数校验，请求分发
      * @author: liudawei
      * @date: 2020/1/14 10:24
      * @param: ctx
@@ -51,20 +51,32 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<FullHttpReq
         FullHttpResponse response = null;
         String content = "";
         Map<String, Object> params = new HashMap<>();
+        boolean isRightRequest = false; //参数是否获取
+
         if (fullHttpRequest.method() == HttpMethod.GET) {
             params = ResponseUtils.getGetParamsFromChannel(fullHttpRequest);
-            log.info("params --- " + params.toString());
-        } else if (fullHttpRequest.method() == HttpMethod.POST) {
+            isRightRequest = true;
+        }
+
+        if (fullHttpRequest.method() == HttpMethod.POST) {
             params = ResponseUtils.getPostParamsFromChannel(fullHttpRequest);
-            log.info("params --- " + params.toString());
-        } else {
-            content = "请求类型不支持！";
+            isRightRequest = true;
+        }
+
+        if(params == null){
+            throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE);
+        }
+
+        log.info("params --- " + params.toString());
+
+        if (!isRightRequest) {
             throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE);
         }
 
         //io.netty.util.IllegalReferenceCountException: refCnt: 0, decrement: 1
         fullHttpRequest.retain();
 
+        //路由
         boolean invote = ActionMapUtil.invote(fullHttpRequest.uri(), fullHttpRequest.method() + "", ctx, params);
         if (invote) {
             throw new BusinessException(ResultInfo.FAILURE, "请求路径不存在！");

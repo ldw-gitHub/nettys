@@ -6,6 +6,7 @@ import com.framework.util.ResponseUtils;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.handler.codec.http.DefaultHttpContent;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpResponseStatus;
@@ -27,9 +28,12 @@ import static io.netty.buffer.Unpooled.copiedBuffer;
 public class NettyVerificationHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest fullHttpRequest) throws Exception {
         log.info("=====================================NettyVerificationHandler.channelRead0==================================");
-        FullHttpRequest fullHttpRequest = (FullHttpRequest) msg;
+        verificationUser(ctx,fullHttpRequest);
+    }
+
+    protected  void verificationUser(ChannelHandlerContext ctx, FullHttpRequest fullHttpRequest) throws Exception{
         log.info("=====================================进入身份认证===================================");
         String authorization = fullHttpRequest.headers().get("Authorization");
         FullHttpResponse response = null;
@@ -40,11 +44,8 @@ public class NettyVerificationHandler extends SimpleChannelInboundHandler<FullHt
         log.info("authorization --- " + authorization);
 
         // TODO 完善身份认证
-
         log.info("=====================================身份认证完成===================================");
-
-        ctx.fireChannelRead(msg);
-
+        ctx.fireChannelRead(fullHttpRequest);
     }
 
     /**

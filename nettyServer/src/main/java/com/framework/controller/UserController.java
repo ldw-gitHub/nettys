@@ -12,6 +12,8 @@ import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.util.CharsetUtil;
 
+import java.io.FileInputStream;
+import java.nio.channels.FileChannel;
 import java.util.Map;
 
 import static io.netty.buffer.Unpooled.copiedBuffer;
@@ -27,9 +29,9 @@ public class UserController {
     @ActionMap(key = "/login", requestMethod = "Post")
     public void login(ChannelHandlerContext ctx, Map<String, Object> params) {
 
-        throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE);
-//        ResultInfo resultInfo = new ResultInfo(ResultInfo.SUCCESS,ResultInfo.MSG_SUCCESS,params);
-//        ResponseUtils.responseOK(ctx,resultInfo);
+//        throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE);
+        ResultInfo resultInfo = new ResultInfo(ResultInfo.SUCCESS,ResultInfo.MSG_SUCCESS,params);
+        ResponseUtils.responseOK(ctx,resultInfo);
     }
 
     @ActionMap(key = "/loginout", requestMethod = "get")

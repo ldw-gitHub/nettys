@@ -13,6 +13,7 @@ import io.netty.handler.codec.http.multipart.InterfaceHttpData;
 import io.netty.handler.codec.http.multipart.MemoryAttribute;
 import io.netty.util.CharsetUtil;
 import io.netty.util.ReferenceCountUtil;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.naming.AuthenticationException;
 import java.io.IOException;
@@ -28,6 +29,7 @@ import static io.netty.buffer.Unpooled.copiedBuffer;
  * @author: liudawei
  * @date: 2020/1/14 10:14
  */
+@Slf4j
 public class ResponseUtils {
 
     /**
@@ -50,7 +52,7 @@ public class ResponseUtils {
             response.headers().set("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
             response.headers().set("Pragma", "no-cache"); // HTTP 1.0
             response.headers().set("Access-Control-Allow-Origin", "*");
-            response.headers().set("Access-Control-Expose-Headers","Authorization");
+            response.headers().set("Access-Control-Expose-Headers", "Authorization");
             response.headers().set("Access-Control-Allow-Headers", "Authorization");
             response.headers().set("Access-Control-Allow-Methods", "*");
             response.headers().set("X-Frame-Options", "SAMEORIGIN");// 解决IFrame拒绝的问题
@@ -88,8 +90,13 @@ public class ResponseUtils {
     }
 
 
-
-    // /*      * 获取GET方式传递的参数      */
+    /**
+     * @description: 获取GET方式传递的参数
+     * @author: liudawei
+     * @date: 2020/1/19 10:26
+     * @param: fullHttpRequest
+     * @return: java.util.Map<java.lang.String, java.lang.Object>
+     */
     public static Map<String, Object> getGetParamsFromChannel(FullHttpRequest fullHttpRequest) {
         Map<String, Object> params = new HashMap<String, Object>();
         if (fullHttpRequest.method() == HttpMethod.GET) {             // 处理get请求
@@ -98,20 +105,26 @@ public class ResponseUtils {
             for (Map.Entry<String, List<String>> entry : paramList.entrySet()) {
                 params.put(entry.getKey(), entry.getValue().get(0));
             }
-            return params;
-        } else {
-            return null;
         }
+        return params;
     }
 
-    /*      * 获取POST方式传递的参数      */
+    /**
+     * @description: 获取POST方式传递的参数
+     * @author: liudawei
+     * @date: 2020/1/19 10:26
+     * @param: fullHttpRequest
+     * @return: java.util.Map<java.lang.String, java.lang.Object>
+     */
     public static Map<String, Object> getPostParamsFromChannel(FullHttpRequest fullHttpRequest) {
         Map<String, Object> params = new HashMap<String, Object>();
         if (fullHttpRequest.method() == HttpMethod.POST) {             // 处理POST请求
             String strContentType = fullHttpRequest.headers().get("Content-Type").trim();
-            if (strContentType.contains("x-www-form-urlencoded")) {
+            log.info("strContentType --- " + strContentType);
+
+            if (strContentType.contains("x-www-form-urlencoded")) {  //获取表单数据
                 params = getFormParams(fullHttpRequest);
-            } else if (strContentType.contains("application/json")) {
+            } else if (strContentType.contains("application/json")) {  //获取json数据
                 try {
                     params = getJSONParams(fullHttpRequest);
                 } catch (UnsupportedEncodingException e) {
@@ -126,7 +139,13 @@ public class ResponseUtils {
         }
     }
 
-    /*      * 解析from表单数据（Content-Type = x-www-form-urlencoded）      */
+    /**
+     * @description: 解析from表单数据（Content-Type = x-www-form-urlencoded）
+     * @author: liudawei
+     * @date: 2020/1/19 10:26
+     * @param: fullHttpRequest
+     * @return: java.util.Map<java.lang.String, java.lang.Object>
+     */
     public static Map<String, Object> getFormParams(FullHttpRequest fullHttpRequest) {
         Map<String, Object> params = new HashMap<String, Object>();
         HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(new DefaultHttpDataFactory(false), fullHttpRequest);
@@ -140,7 +159,13 @@ public class ResponseUtils {
         return params;
     }
 
-    /*      * 解析json数据（Content-Type = application/json）      */
+    /**
+     * @description: 解析json数据（Content-Type = application/json）
+     * @author: liudawei
+     * @date: 2020/1/19 10:27
+     * @param: fullHttpRequest
+     * @return: java.util.Map<java.lang.String, java.lang.Object>
+     */
     public static Map<String, Object> getJSONParams(FullHttpRequest fullHttpRequest) throws UnsupportedEncodingException {
         Map<String, Object> params = new HashMap<String, Object>();
         ByteBuf content = fullHttpRequest.content();
