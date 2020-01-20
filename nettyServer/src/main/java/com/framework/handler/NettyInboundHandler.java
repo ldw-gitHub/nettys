@@ -9,6 +9,7 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.*;
+import io.netty.handler.codec.http.multipart.*;
 import io.netty.util.CharsetUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -44,21 +45,24 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<FullHttpReq
      */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest fullHttpRequest) throws Exception {
+        log.info("================================= NettyInboundHandler.channelRead0 =====================================");
         //采用业务线程池来处理业务逻辑，否则netty workerGroup会阻塞在此，影响服务器效率
-        log.info("request url --- " + fullHttpRequest.uri());
-        log.info("request method --- " + fullHttpRequest.method());
+        String uri = fullHttpRequest.uri();
+        HttpMethod method = fullHttpRequest.method();
+        log.info("request url --- " + uri);
+        log.info("request method --- " + method);
 
         FullHttpResponse response = null;
         String content = "";
         Map<String, Object> params = new HashMap<>();
         boolean isRightRequest = false; //参数是否获取
 
-        if (fullHttpRequest.method() == HttpMethod.GET) {
+        if (method == HttpMethod.GET) {
             params = ResponseUtils.getGetParamsFromChannel(fullHttpRequest);
             isRightRequest = true;
         }
 
-        if (fullHttpRequest.method() == HttpMethod.POST) {
+        if (method == HttpMethod.POST) {
             params = ResponseUtils.getPostParamsFromChannel(fullHttpRequest);
             isRightRequest = true;
         }
@@ -77,7 +81,7 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<FullHttpReq
         fullHttpRequest.retain();
 
         //路由
-        boolean invote = ActionMapUtil.invote(fullHttpRequest.uri(), fullHttpRequest.method() + "", ctx, params);
+        boolean invote = ActionMapUtil.invote(uri, method + "", ctx, params);
         if (invote) {
             throw new BusinessException(ResultInfo.FAILURE, "请求路径不存在！");
         }
@@ -94,12 +98,11 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<FullHttpReq
      * @return: void
      */
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable ex) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable ex) {
         if (ex != null) {
             ex.printStackTrace();
             ResponseUtils.responseError(ctx, ex);
         }
-
     }
 
 

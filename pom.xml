@@ -12,9 +12,31 @@
         <module>nettyMaterials</module>
         <module>common</module>
         <module>nettyServer</module>
+        <module>nettyUploadServer</module>
     </modules>
 
+    <properties>
+        <springboot.version>1.5.4.RELEASE</springboot.version>
+        <project.version>1.0-SNAPSHOT</project.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
         <dependency>
             <groupId>io.netty</groupId>

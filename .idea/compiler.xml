@@ -9,6 +9,7 @@
         <module name="common" />
         <module name="netty" />
         <module name="nettyServer" />
+        <module name="nettyUploadServer" />
         <module name="nettyMaterials" />
       </profile>
     </annotationProcessing>
