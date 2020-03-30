@@ -4,6 +4,7 @@ target/
 !.mvn/wrapper/*
 *.war
 *.zip
+*.rar
 *.tar
 *.tar.gz
 

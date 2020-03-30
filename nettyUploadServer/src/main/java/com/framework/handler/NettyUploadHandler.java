@@ -1,5 +1,7 @@
 package com.framework.handler;
 
+import com.framework.config.RedisUtils;
+import com.framework.constant.RedisKey;
 import com.framework.model.ResultInfo;
 import com.framework.util.ResponseUtils;
 import io.netty.buffer.ByteBuf;
@@ -11,24 +13,34 @@ import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.multipart.*;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * @description
+ * @description 文件上传
  * @author: liudawei
  * @date: 2020/1/19 15:56
  */
 @Slf4j
 public class NettyUploadHandler extends SimpleChannelInboundHandler<HttpObject> {
 
+    RedisUtils redisUtils;
+
+    public NettyUploadHandler(RedisUtils redisUtils){
+        this.redisUtils = redisUtils;
+    }
 
     private HttpRequest request;
-    private static final String FILE_UPLOAD = "/data/";
+    private static final String FILE_UPLOAD = "E:\\cesi";
     private static final String URL = "/post_multipart";
     private static final HttpDataFactory factory = new DefaultHttpDataFactory(DefaultHttpDataFactory.MINSIZE); // Disk if size exceed
     private HttpPostRequestDecoder decoder;
@@ -37,13 +49,18 @@ public class NettyUploadHandler extends SimpleChannelInboundHandler<HttpObject> 
     public void channelInactive(ChannelHandlerContext ctx) {
         if (decoder != null) {
             decoder.cleanFiles();
+            log.info("====================== decoder.cleanFiles() ===================");
         }
     }
 
+    @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject httpObject) throws Exception {
         log.info("================================= NettyUploadHandler.channelRead0 =====================================");
         if (httpObject instanceof HttpRequest) {
+            //第一次请求
             this.request = (HttpRequest) httpObject;
+            log.info("request.uri() ==== " + request.uri());
+
             if (request.uri().equalsIgnoreCase(URL)) {
                 decoder = new HttpPostRequestDecoder(factory, request);
                 decoder.setDiscardThreshold(0);
@@ -57,18 +74,18 @@ public class NettyUploadHandler extends SimpleChannelInboundHandler<HttpObject> 
             if (decoder != null) {
                 // 接收一个新的请求体
                 decoder.offer((HttpContent) httpObject);
-
                 if (httpObject instanceof LastHttpContent) {
-                    readHttpDataChunkByChunk();
                     // 将内存中的数据序列化本地
+                    readHttpDataChunkByChunk();
                     log.info("======================= LastHttpContent =======================");
                     reset();
                     ResponseUtils.responseOK(ctx, new ResultInfo(ResultInfo.SUCCESS, ResultInfo.MSG_SUCCESS, "操作成功"));
                 }
-            }else{
+            } else {
                 ResponseUtils.responseOK(ctx, new ResultInfo(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE, "文件内容为空"));
             }
         }
+
     }
 
     private void readHttpDataChunkByChunk() throws IOException {
@@ -76,18 +93,25 @@ public class NettyUploadHandler extends SimpleChannelInboundHandler<HttpObject> 
         while (decoder.hasNext()) {
             InterfaceHttpData data = decoder.next();
             log.info("data.getHttpDataType() === " + data.getHttpDataType());
+            //获取其它参数信息
+            log.info("data.size === " + decoder.getBodyHttpData("size"));
             if (data != null && InterfaceHttpData.HttpDataType.FileUpload.equals(data.getHttpDataType())) {
                 final FileUpload fileUpload = (FileUpload) data;
-                final File file = new File(FILE_UPLOAD + fileUpload.getFilename());
-                log.info("upload file: {}", file);
-                try (FileChannel inputChannel = new FileInputStream(fileUpload.getFile()).getChannel();
-                     FileChannel outputChannel = new FileOutputStream(file).getChannel()) {
-                    outputChannel.transferFrom(inputChannel, 0, inputChannel.size());
+                if (fileUpload.isCompleted()) {
+                    File dir = new File(FILE_UPLOAD);
+                    if (!dir.exists()) {
+                        dir.mkdir();
+                    }
+                    File dest = new File(dir, fileUpload.getFilename());
+                    fileUpload.renameTo(dest);
+                    //将上传文件放入redis
+                    redisUtils.set(RedisKey.DIR_PATH + fileUpload.getFilename(),fileUpload.getFilename());
                 }
             }
         }
 
     }
+
 
     private void reset() {
         request = null;
@@ -96,31 +120,6 @@ public class NettyUploadHandler extends SimpleChannelInboundHandler<HttpObject> 
         decoder = null;
     }
 
-    private String getUploadResponse() {
-        return "<!DOCTYPE html>\n" +
-                "<html lang=\"en\">\n" +
-                "<head>\n" +
-                "    <meta charset=\"UTF-8\">\n" +
-                "    <title>Title</title>\n" +
-                "</head>\n" +
-                "<body>\n" +
-                "\n" +
-                "<form action=\"http://127.0.0.1:8080/post_multipart\" enctype=\"multipart/form-data\" method=\"POST\">\n" +
-                "\n" +
-                "\n" +
-                "    <input type=\"file\" name=" +
-                " " +
-                "" +
-                "\"YOU_KEY\">\n" +
-                "\n" +
-                "    <input type=\"submit\" name=\"send\">\n" +
-                "\n" +
-                "</form>\n" +
-                "\n" +
-                "</body>\n" +
-                "</html>";
-
-    }
 
     /**
      * @description:处理抛出的异常

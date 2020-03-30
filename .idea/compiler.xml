@@ -13,5 +13,8 @@
         <module name="nettyMaterials" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="investigation" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,6 +1,6 @@
 package com.framework;
 
-import com.framework.server.NettyServer;
+import com.framework.service.NettyServer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
