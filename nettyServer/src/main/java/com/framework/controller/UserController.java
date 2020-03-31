@@ -4,6 +4,8 @@ import com.framework.auth.ActionMap;
 import com.framework.auth.NettyController;
 import com.framework.model.BusinessException;
 import com.framework.model.ResultInfo;
+import com.framework.model.SystemUserModel;
+import com.framework.service.base.SystemUserService;
 import com.framework.util.ResponseUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFutureListener;
@@ -11,6 +13,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.util.CharsetUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.FileInputStream;
 import java.nio.channels.FileChannel;
@@ -26,11 +29,15 @@ import static io.netty.buffer.Unpooled.copiedBuffer;
 @NettyController
 public class UserController {
 
+    @Autowired
+    SystemUserService systemUserService;
+
     @ActionMap(key = "/login", requestMethod = "Post")
-    public void login(ChannelHandlerContext ctx, Map<String, Object> params) {
+    public void login(ChannelHandlerContext ctx, Map<String, Object> params) throws Exception{
 
 //        throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE);
-        ResultInfo resultInfo = new ResultInfo(ResultInfo.SUCCESS,ResultInfo.MSG_SUCCESS,params);
+        SystemUserModel model = systemUserService.selectByPrimaryKey(1l);
+        ResultInfo resultInfo = new ResultInfo(ResultInfo.SUCCESS,ResultInfo.MSG_SUCCESS,model);
         ResponseUtils.responseOK(ctx,resultInfo);
     }
 

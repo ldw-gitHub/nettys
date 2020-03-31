@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common" />
-        <module name="netty" />
-        <module name="nettyServer" />
-        <module name="nettyUploadServer" />
         <module name="nettyMaterials" />
+        <module name="netty" />
+        <module name="common" />
+        <module name="nettyServer" />
+        <module name="service" />
+        <module name="nettyUploadServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
