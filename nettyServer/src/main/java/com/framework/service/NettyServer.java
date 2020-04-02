@@ -1,12 +1,14 @@
 package com.framework.service;
 
 import com.framework.init.NettyServerInitializer;
+import com.framework.util.TokenUtils;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -20,6 +22,9 @@ public class NettyServer {
 
     private int port = 8899;
 
+    @Autowired
+    TokenUtils tokenUtils;
+
     public void run() throws Exception {
         //事件循环组
         EventLoopGroup bossGroup = new NioEventLoopGroup(); //获取连接 accept
@@ -27,7 +32,7 @@ public class NettyServer {
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).
-                    childHandler(new NettyServerInitializer());//子处理化拦截器
+                    childHandler(new NettyServerInitializer(tokenUtils));//子处理化拦截器
 
             ChannelFuture sync = serverBootstrap.bind(port).sync();
             log.info("netty服务已启动：" + port);

@@ -1,5 +1,6 @@
 package com.framework.util;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.framework.model.BusinessException;
 import com.framework.model.ResultInfo;
@@ -40,6 +41,8 @@ public class ResponseUtils {
      * @return: void
      */
     public static void responseOK(ChannelHandlerContext ctx, ResultInfo resultInfo) {
+        Map<String,String> header = resultInfo.getHeader();
+        resultInfo.setHeader(null);
         ByteBuf content = copiedBuffer(resultInfo.toString(), CharsetUtil.UTF_8);
 
         FullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, content);
@@ -55,6 +58,12 @@ public class ResponseUtils {
             response.headers().set("Access-Control-Allow-Headers", "Authorization");
             response.headers().set("Access-Control-Allow-Methods", "*");
             response.headers().set("X-Frame-Options", "SAMEORIGIN");// 解决IFrame拒绝的问题
+
+            if(header != null){
+                for(Map.Entry<String,String> m:header.entrySet()){
+                    response.headers().set(m.getKey(), m.getValue());
+                }
+            }
         }
 
         ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
@@ -96,8 +105,8 @@ public class ResponseUtils {
      * @param: fullHttpRequest
      * @return: java.util.Map<java.lang.String, java.lang.Object>
      */
-    public static Map<String, Object> getGetParamsFromChannel(FullHttpRequest fullHttpRequest) {
-        Map<String, Object> params = new HashMap<String, Object>();
+    public static JSONObject getGetParamsFromChannel(FullHttpRequest fullHttpRequest) {
+        JSONObject params = new JSONObject();
         if (fullHttpRequest.method() == HttpMethod.GET) {             // 处理get请求
             QueryStringDecoder decoder = new QueryStringDecoder(fullHttpRequest.uri());
             Map<String, List<String>> paramList = decoder.parameters();
@@ -115,8 +124,8 @@ public class ResponseUtils {
      * @param: fullHttpRequest
      * @return: java.util.Map<java.lang.String, java.lang.Object>
      */
-    public static Map<String, Object> getPostParamsFromChannel(FullHttpRequest fullHttpRequest) {
-        Map<String, Object> params = new HashMap<String, Object>();
+    public static JSONObject getPostParamsFromChannel(FullHttpRequest fullHttpRequest) {
+        JSONObject params = new JSONObject();
         if (fullHttpRequest.method() == HttpMethod.POST) {             // 处理POST请求
             String strContentType = fullHttpRequest.headers().get("Content-Type").trim();
             log.info("strContentType --- " + strContentType);
@@ -145,8 +154,8 @@ public class ResponseUtils {
      * @param: fullHttpRequest
      * @return: java.util.Map<java.lang.String, java.lang.Object>
      */
-    public static Map<String, Object> getFormParams(FullHttpRequest fullHttpRequest) {
-        Map<String, Object> params = new HashMap<String, Object>();
+    public static JSONObject getFormParams(FullHttpRequest fullHttpRequest) {
+        JSONObject params = new JSONObject();
         HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(new DefaultHttpDataFactory(false), fullHttpRequest);
         List<InterfaceHttpData> postData = decoder.getBodyHttpDatas();
         for (InterfaceHttpData data : postData) {
@@ -165,8 +174,8 @@ public class ResponseUtils {
      * @param: fullHttpRequest
      * @return: java.util.Map<java.lang.String, java.lang.Object>
      */
-    public static Map<String, Object> getJSONParams(FullHttpRequest fullHttpRequest) throws UnsupportedEncodingException {
-        Map<String, Object> params = new HashMap<String, Object>();
+    public static JSONObject getJSONParams(FullHttpRequest fullHttpRequest) throws UnsupportedEncodingException {
+        JSONObject params = new JSONObject();
         ByteBuf content = fullHttpRequest.content();
         byte[] reqContent = new byte[content.readableBytes()];
         content.readBytes(reqContent);

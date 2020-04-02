@@ -3,11 +3,15 @@ package com.framework.handler;
 import com.framework.model.BusinessException;
 import com.framework.model.ResultInfo;
 import com.framework.util.ResponseUtils;
+import com.framework.util.TokenUtils;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.FullHttpResponse;
+import io.netty.handler.codec.http.HttpMethod;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 /**
@@ -17,15 +21,26 @@ import org.springframework.util.StringUtils;
  */
 @Slf4j
 public class NettyVerificationHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
+    TokenUtils tokenUtils;
 
-    @Override
-    protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest fullHttpRequest){
-        log.info("==================================== NettyVerificationHandler.channelRead0 ==================================");
-        verificationUser(ctx,fullHttpRequest);
+    public NettyVerificationHandler(TokenUtils tokenUtils) {
+        this.tokenUtils = tokenUtils;
     }
 
-    protected  void verificationUser(ChannelHandlerContext ctx, FullHttpRequest fullHttpRequest){
+    @Override
+    protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest fullHttpRequest) {
+        log.info("==================================== NettyVerificationHandler.channelRead0 ==================================");
+        verificationUser(ctx, fullHttpRequest);
+    }
+
+    protected void verificationUser(ChannelHandlerContext ctx, FullHttpRequest fullHttpRequest) {
         log.info("=====================================进入身份认证===================================");
+        String uri = fullHttpRequest.uri();
+        if (uri.equals("/login")) {
+            ctx.fireChannelRead(fullHttpRequest);
+            return;
+        }
+
         String authorization = fullHttpRequest.headers().get("Authorization");
         if (StringUtils.isEmpty(authorization)) {
             log.error("缺失Authorization！！！！！");
@@ -35,6 +50,14 @@ public class NettyVerificationHandler extends SimpleChannelInboundHandler<FullHt
 
         // TODO 完善身份认证
         log.info("=====================================身份认证完成===================================");
+        if (!tokenUtils.existToken(authorization)) {
+            log.error("Authorization ====== " + authorization);
+            throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_INVALID_TOKEN);
+        }
+
+        //token时间设置
+        tokenUtils.refreshToken(authorization);
+
         ctx.fireChannelRead(fullHttpRequest);
     }
 

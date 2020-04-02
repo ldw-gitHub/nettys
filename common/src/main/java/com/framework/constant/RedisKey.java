@@ -24,12 +24,7 @@ public class RedisKey {
 	 * k-value:token,id,account,username,roleId,type,email,mobile,photo 
 	 * ttl:有
 	 */
-	public final static String ADMIN_JWT_TOKEN = DB_NAME + "admin:token:";
-	
-	/**
-	 * PC-web端与Mobile共用
-	 */
-	public final static String WEB_JWT_TOKEN = DB_NAME + "web:token:";
+	public final static String ADMIN_TOKEN = DB_NAME + "admin:token:";
 	//===============================token相关============================================
 
 }

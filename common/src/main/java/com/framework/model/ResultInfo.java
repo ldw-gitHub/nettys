@@ -5,6 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import java.util.Map;
+
 @JsonInclude(value = Include.NON_NULL)
 public class ResultInfo<T> {
 
@@ -39,6 +41,7 @@ public class ResultInfo<T> {
     private String message;
     private Long timestamp;
     private T data;
+    private Map<String,String> header;
 
     public Integer getCode() {
         return code;
@@ -72,6 +75,14 @@ public class ResultInfo<T> {
         this.data = data;
     }
 
+    public Map<String, String> getHeader() {
+        return header;
+    }
+
+    public void setHeader(Map<String, String> header) {
+        this.header = header;
+    }
+
     public ResultInfo() {}
 
     public ResultInfo(Integer code, String message) {
@@ -89,6 +100,15 @@ public class ResultInfo<T> {
         this.data = data;
     }
 
+    public ResultInfo(Integer code, String message, T data,Map<String,String> header) {
+        super();
+        this.code = code;
+        this.timestamp = System.currentTimeMillis();
+        this.message = message;
+        this.data = data;
+        this.header = header;
+    }
+
     @Override
     public String toString() {
         JSONObject rtJson = new JSONObject();
@@ -96,6 +116,7 @@ public class ResultInfo<T> {
         rtJson.put("message",message);
         rtJson.put("timestamp",timestamp);
         rtJson.put("data",data);
+        rtJson.put("header",header);
         return rtJson.toString();
     }
 }

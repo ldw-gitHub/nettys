@@ -100,19 +100,6 @@ public class RedisUtils {
     public Long decr(String key, long delta) {
     	return redisTemplate.opsForValue().increment(key, -delta);
     }
-    
-    /**
-     * 判断用户的token是否存在
-     * @param token 登录的jwt token
-     * @return boolean
-     */
-    public boolean existsWebToken(final String token) {
-    	return redisTemplate.hasKey(RedisKey.WEB_JWT_TOKEN + token);
-    }
-    
-    public boolean existsAdminToken(final String token) {
-    	return redisTemplate.hasKey(RedisKey.ADMIN_JWT_TOKEN + token);
-    }
 
     /**
      * 读取缓存

@@ -1,5 +1,6 @@
 package com.framework.handler;
 
+import com.alibaba.fastjson.JSONObject;
 import com.framework.model.BusinessException;
 import com.framework.model.ResultInfo;
 import com.framework.util.ActionMapUtil;
@@ -52,9 +53,7 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<FullHttpReq
         log.info("request url --- " + uri);
         log.info("request method --- " + method);
 
-        FullHttpResponse response = null;
-        String content = "";
-        Map<String, Object> params = new HashMap<>();
+        JSONObject params = new JSONObject();
         boolean isRightRequest = false; //参数是否获取
 
         if (method == HttpMethod.GET) {
@@ -67,11 +66,14 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<FullHttpReq
             isRightRequest = true;
         }
 
-        if(params == null){
+        if (params == null) {
             throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE);
         }
 
-        log.info("params --- " + params.toString());
+        String authorization = fullHttpRequest.headers().get("Authorization");
+        params.put("token",authorization);
+
+        log.info("params : " + params.toJSONString());
 
         if (!isRightRequest) {
             throw new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_FAILURE);
@@ -79,6 +81,7 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<FullHttpReq
 
         //io.netty.util.IllegalReferenceCountException: refCnt: 0, decrement: 1
         fullHttpRequest.retain();
+
 
         //路由
         boolean invote = ActionMapUtil.invote(uri, method + "", ctx, params);
