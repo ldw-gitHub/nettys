@@ -11,6 +11,9 @@ import io.netty.handler.logging.LoggingHandler;
 public class MyServer {
 
     public static void main(String[] args) {
+        TextWebSocketFrameHandler textWebSocketFrameHandler = new TextWebSocketFrameHandler();
+        textWebSocketFrameHandler.doSendFramemarkTask();
+
         EventLoopGroup boosGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
@@ -21,6 +24,7 @@ public class MyServer {
 
             ChannelFuture channelFuture = serverBootstrap.bind(8899).sync();
             channelFuture.channel().closeFuture().sync();
+
 
         } catch (InterruptedException e) {
             e.printStackTrace();

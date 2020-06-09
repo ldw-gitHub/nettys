@@ -1,12 +1,16 @@
 package com.framework.init;
 
+import com.framework.handler.BinaryWebSocketFrameHandler;
 import com.framework.handler.NettyInboundHandler;
 import com.framework.handler.NettyVerificationHandler;
+import com.framework.handler.TextWebSocketFrameHandler;
 import com.framework.util.TokenUtils;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.http.*;
+import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
+import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import jdk.nashorn.internal.parser.Token;
 import org.springframework.stereotype.Component;
 
@@ -27,7 +31,15 @@ public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
         //将HTTP消息的多个部分合成一条完整的HTTP消息
         pipeline.addLast("http-aggregator",new HttpObjectAggregator(65535));
         //自定义拦截器
+        //ws 连接
+        pipeline.addLast(new WebSocketServerProtocolHandler("/ws",null,true,10485760));
+        pipeline.addLast(new TextWebSocketFrameHandler());
+        pipeline.addLast(new BinaryWebSocketFrameHandler());
+
+        //身份校验
         pipeline.addLast("NettyVerificationHandler",new NettyVerificationHandler(tokenUtils));
+        //参数校验
         pipeline.addLast("NettyInboundHandler",new NettyInboundHandler());
+
     }
 }

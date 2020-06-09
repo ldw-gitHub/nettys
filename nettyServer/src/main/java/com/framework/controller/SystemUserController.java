@@ -14,8 +14,10 @@ import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.DigestUtils;
 
 import java.net.SocketAddress;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -78,12 +80,39 @@ public class SystemUserController {
         redisUserMap.put("loginTime", System.currentTimeMillis()+"");
         redisUserMap.put("username",model.getUsername());
         redisUserMap.put("account",model.getAccount());
-        redisUserMap.put("roleId",model.getRoleId() == null ? "":model.getRoleId());
+        redisUserMap.put("roleId",model.getRoleId() == null ? "":model.getRoleId() + "");
 
         tokenUtils.setTokenAndUserInfo(token,redisUserMap);
 
         ResultInfo resultInfo = new ResultInfo(ResultInfo.SUCCESS, ResultInfo.MSG_SUCCESS, redisUserMap,header);
         ResponseUtils.responseOK(ctx, resultInfo);
+    }
+
+    @ActionMap(key = "/insertSysUser", requestMethod = "post")
+    public void insertSysUser(ChannelHandlerContext ctx, JSONObject params) throws Exception{
+        String username = params.getString("username");
+        String password = params.getString("password");
+
+        if (StringUtils.isBlank(username)) {
+            ResponseUtils.responseError(ctx, new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_INVALID_PARAM));
+        }
+
+        if (StringUtils.isBlank(password)) {
+            ResponseUtils.responseError(ctx, new BusinessException(ResultInfo.FAILURE, ResultInfo.MSG_INVALID_PARAM));
+        }
+
+        password = DigestUtils.md5DigestAsHex(password.getBytes());
+
+        Map<String, Object> userInfo = tokenUtils.getUserInfoByToken(params.getString("token"));
+
+        SystemUserModel model = new SystemUserModel();
+        model.setAccount(username);
+        model.setUsername(username);
+        model.setCreateTime(new Date());
+        model.setPassword(password);
+        model.setState(1);
+
+        ResponseUtils.responseOK(ctx, new ResultInfo(ResultInfo.SUCCESS, ResultInfo.MSG_SUCCESS, systemUserService.insertUserModel(model)));
     }
 
     /**

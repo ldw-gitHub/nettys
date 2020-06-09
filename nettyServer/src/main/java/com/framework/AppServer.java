@@ -2,9 +2,13 @@ package com.framework;
 
 import com.framework.service.NettyServer;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import javax.annotation.Resource;
 
@@ -17,12 +21,21 @@ import javax.annotation.Resource;
 @SpringBootApplication
 public class AppServer implements CommandLineRunner {
 
-    @Resource
+    @Autowired
     NettyServer nettyServer;
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(AppServer.class).web(false).run(args);
     }
+
+    //同时启用springmvc和netty
+/*
+    public static void main(String[] args) throws Exception {
+        ConfigurableApplicationContext run = SpringApplication.run(AppServer.class, args);
+        NettyServer nettyServer = (NettyServer)run.getBean("nettyServer");
+        nettyServer.start(8090);
+    }
+*/
 
 
     @Override

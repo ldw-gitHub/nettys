@@ -68,6 +68,17 @@ public class TokenUtils {
     }
 
     /**
+     * @description:  获取当前用户登入信息
+     * @author: liudawei
+     * @date: 2020/4/7 12:01
+     * @param: token
+     * @return: java.util.Map<java.lang.String,java.lang.Object>
+     */
+    public  Map<String, Object> getUserInfoByToken(String token){
+        return redisUtils.hgetAll(RedisKey.ADMIN_TOKEN +token.replace(BEARER,""));
+    }
+
+    /**
      * @description: token删除
      * @author: liudawei
      * @date: 2020/4/2 14:26
