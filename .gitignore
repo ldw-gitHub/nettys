@@ -47,7 +47,7 @@ Thumbs.db
 /target/
 /logs
 /.idea
-/.idea/*
+/.idea/
 # *.properties
 # pom.xml
 # mybaties-*.xml
