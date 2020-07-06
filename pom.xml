@@ -14,10 +14,12 @@
         <module>nettyServer</module>
         <module>nettyUploadServer</module>
         <module>service</module>
+        <module>actuator</module>
     </modules>
 
     <properties>
-        <springboot.version>1.5.4.RELEASE</springboot.version>
+        <springboot.version>2.1.3.RELEASE</springboot.version>
+<!--        <springboot.version>1.5.4.RELEASE</springboot.version>-->
         <project.version>1.0-SNAPSHOT</project.version>
         <druid.version>1.1.10</druid.version>
         <pagehelper.version>1.2.3</pagehelper.version>
@@ -68,33 +70,7 @@
             <version>1.18.10</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-<!--            <version>2.1.3.RELEASE</version>-->
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-             <version>8.0.19</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
     </dependencies>
 
 

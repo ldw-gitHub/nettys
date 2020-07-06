@@ -19,27 +19,25 @@ import javax.annotation.Resource;
  */
 @MapperScan({"com.framework.mapper"})
 @SpringBootApplication
-public class AppServer implements CommandLineRunner {
+public class AppServer /*implements CommandLineRunner*/ {
 
     @Autowired
     NettyServer nettyServer;
 
-    public static void main(String[] args) {
+ /*   public static void main(String[] args) {
         new SpringApplicationBuilder(AppServer.class).web(false).run(args);
     }
-
+*/
     //同时启用springmvc和netty
-/*
     public static void main(String[] args) throws Exception {
         ConfigurableApplicationContext run = SpringApplication.run(AppServer.class, args);
         NettyServer nettyServer = (NettyServer)run.getBean("nettyServer");
         nettyServer.start(8090);
     }
-*/
 
 
-    @Override
-    public void run(String... args) throws Exception {
-        nettyServer.start(8080);
-    }
+//    @Override
+//    public void run(String... args) throws Exception {
+//        nettyServer.start(8080);
+//    }
 }

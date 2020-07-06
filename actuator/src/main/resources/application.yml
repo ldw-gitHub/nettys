@@ -1,0 +1,38 @@
+server:
+  port: 8082
+#设置actuator监控端口
+#开启所有监控,默认只开启health和info
+management:
+  server:
+    port: 8083
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    shutdown:   #可以关闭指定的端口
+      enabled: false
+
+
+
+#配置admin主机地址
+#设置用户名和密码
+spring:
+  security:
+    user:
+      name: admin
+      password: 123456
+  boot:
+    admin:
+      notify:
+        pagerduty:
+          client-url: http://localhost:8082
+
+#添加info信息
+info:
+  author: monkey1024
+  url: www.monkey1024.com
+  head: head
+  body: body

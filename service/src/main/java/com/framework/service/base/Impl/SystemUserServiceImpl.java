@@ -1,6 +1,5 @@
 package com.framework.service.base.Impl;
 
-import com.framework.base.BaseServiceImpl;
 import com.framework.mapper.base.SystemUserMapper;
 import com.framework.model.SystemUserModel;
 import com.framework.service.base.SystemUserService;
@@ -29,7 +28,8 @@ public class SystemUserServiceImpl implements SystemUserService {
         SystemUserModel model = new SystemUserModel();
         model.setAccount(username);
         Example<SystemUserModel> example = Example.of(model);
-        return systemUserMapper.findOne(example);
+//        return systemUserMapper.findOne(example);
+        return null;
     }
 
     /**
@@ -41,7 +41,8 @@ public class SystemUserServiceImpl implements SystemUserService {
      */
     @Override
     public Long insertUserModel(SystemUserModel model) throws Exception {
-        SystemUserModel save = systemUserMapper.save(model);
-        return save.getId();
+//        SystemUserModel save = systemUserMapper.save(model);
+        int save = systemUserMapper.insert(model);
+        return 1L;
     }
 }

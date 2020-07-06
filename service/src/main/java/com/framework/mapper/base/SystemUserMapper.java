@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author: liudawei
  * @date: 2020/3/31 16:50
  */
-public interface SystemUserMapper extends JpaRepository<SystemUserModel,Long> {
+//public interface SystemUserMapper extends JpaRepository<SystemUserModel,Long> {
+public interface SystemUserMapper extends BaseMapper<SystemUserModel> {
 
 }
