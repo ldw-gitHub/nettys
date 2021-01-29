@@ -1,3 +1,4 @@
+/*
 package com.framework;
 
 import com.framework.config.RedisUtils;
@@ -20,11 +21,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+*/
 /**
  * @description
  * @author: liudawei
  * @date: 2020/6/1 18:00
- */
+ *//*
+
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class AppTestServer {
@@ -65,11 +68,13 @@ public class AppTestServer {
                         lock.unlock();
                     }
 
-               /*     try {
+               */
+/*     try {
                         lock.unlock();
                     }catch (Exception e){
 
-                    }*/
+                    }*//*
+
                 }
 
 
@@ -80,10 +85,13 @@ public class AppTestServer {
     }
 
 
-    /**
+    */
+/**
      * pdf 转word
      * @param args
-     */
+     *//*
+
+*/
 /*    public static void main(String[] args) {
         try{
             String pdfFile = "C:\\Users\\20190322\\Desktop\\1.pdf";
@@ -110,5 +118,7 @@ public class AppTestServer {
         catch (IOException e){
             e.printStackTrace();
         }
-    }*/
+    }*//*
+
 }
+*/

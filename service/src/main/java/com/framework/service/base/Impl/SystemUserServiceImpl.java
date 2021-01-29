@@ -29,7 +29,7 @@ public class SystemUserServiceImpl implements SystemUserService {
         model.setAccount(username);
         Example<SystemUserModel> example = Example.of(model);
 //        return systemUserMapper.findOne(example);
-        return null;
+        return systemUserMapper.selectOne(model);
     }
 
     /**
