@@ -7,14 +7,21 @@ import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author 20190322
+ */
+@Slf4j
 public class TextWebSocketFrameHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
-    //保存channel对象
+    /**
+     * 保存channel对象
+     */
     public static ChannelGroup channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
     @Override
@@ -27,6 +34,7 @@ public class TextWebSocketFrameHandler extends SimpleChannelInboundHandler<TextW
         //推送消息
         channelGroup.forEach(ch -> {
             if (channel != ch) {
+//                channelHandlerContext.fireChannelRead(textWebSocketFrame);
                 ch.writeAndFlush(new TextWebSocketFrame("【" + channel.remoteAddress() + "】" + textWebSocketFrame.text() + "\n"));
             } else {
                 ch.writeAndFlush(new TextWebSocketFrame("【自己】" + textWebSocketFrame.text() + "\n"));

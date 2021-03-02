@@ -1,5 +1,6 @@
 package com.framework.service;
 
+import com.framework.handler.TextWebSocketFrameHandler;
 import com.framework.init.NettyServerInitializer;
 import com.framework.util.TokenUtils;
 import io.netty.bootstrap.ServerBootstrap;
@@ -26,13 +27,18 @@ public class NettyServer {
     TokenUtils tokenUtils;
 
     public void run() throws Exception {
+        TextWebSocketFrameHandler textWebSocketFrameHandler = new TextWebSocketFrameHandler();
+        textWebSocketFrameHandler.doSendFramemarkTask();
         //事件循环组
-        EventLoopGroup bossGroup = new NioEventLoopGroup(); //获取连接 accept
-        EventLoopGroup workerGroup = new NioEventLoopGroup();//处理连接 read and send
+        //获取连接 accept
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
+        //处理连接 read and send
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
+            //子处理化拦截器
             serverBootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).
-                    childHandler(new NettyServerInitializer(tokenUtils));//子处理化拦截器
+                    childHandler(new NettyServerInitializer(tokenUtils));
 
             ChannelFuture sync = serverBootstrap.bind(port).sync();
             log.info("netty服务已启动：" + port);

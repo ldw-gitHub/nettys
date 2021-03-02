@@ -31,6 +31,7 @@ public class BinaryWebSocketFrameHandler extends SimpleChannelInboundHandler<Bin
         TextWebSocketFrameHandler.channelGroup.forEach(ch -> {
             //io.netty.util.IllegalReferenceCountException: refCnt: 0, decrement: 1
             byteBuf.retain();
+            log.info("写出文件");
             ch.writeAndFlush(new BinaryWebSocketFrame(byteBuf));
         });
     }
